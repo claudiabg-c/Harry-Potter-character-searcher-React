@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import callToApi from "../services/api";
 import logo from "../images/Harry-Potter-Logo.png";
 import "../styles/App.scss";
+import CharacterList from "./CharacterList";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -12,14 +13,14 @@ const App = () => {
     });
   }, []);
 
-  console.table(characters);
-
   return (
     <div>
       <header className="header">
         <img className="title" alt="Logo Harry Potter" src={logo}></img>
       </header>
-      <main></main>
+      <main>
+        <CharacterList characters={characters} />
+      </main>
       <footer></footer>
     </div>
   );

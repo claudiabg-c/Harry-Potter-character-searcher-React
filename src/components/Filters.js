@@ -8,7 +8,7 @@ function Filters(props) {
   };
 
   return (
-    <form>
+    <form onSubmit={(ev) => ev.preventDefault()}>
       <label>
         Buscar personaje:
         <input type="text" onChange={handleInput} />

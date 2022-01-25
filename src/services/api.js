@@ -9,6 +9,9 @@ const callToApi = (searchHouse) => {
           img: character.image,
           name: character.name,
           species: character.species,
+          status: character.alive,
+          gender: character.gender,
+          nickName: character.alternate_names,
         };
       });
       return result;

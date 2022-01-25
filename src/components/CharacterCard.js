@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../images/hp-logo.png";
 
 function CharacterCard(props) {
@@ -9,7 +10,6 @@ function CharacterCard(props) {
           .includes(`${props.searchName}`.toLowerCase());
       })
       .filter((character) => {
-        //return filterGender === '' ? true : user.gender === filterGender;
         if (props.searchHouse === "gryffindor") {
           return true;
         } else {
@@ -17,23 +17,25 @@ function CharacterCard(props) {
         }
       })
       .map((character, index) => {
-        if (character.img !== "") {
-          return (
-            <li key={index}>
-              <img src={character.img} alt={`Foto de ${character.name}`} />
-              <h2>{character.name}</h2>
-              <p>{character.species}</p>
-            </li>
-          );
+        let img;
+        if (character.img === "") {
+          img = false;
         } else {
-          return (
-            <li key={index}>
-              <img src={logo} alt={`Foto del personaje no disponible`} />
-              <h2>{character.name}</h2>
-              <p>{character.species}</p>
-            </li>
-          );
+          img = true;
         }
+        return (
+          <li key={index}>
+            <Link to={`/character/${character.name}`}>
+              {img ? (
+                <img src={character.img} alt={`Foto de ${character.name}`} />
+              ) : (
+                <img src={logo} alt={`Foto del personaje no disponible`} />
+              )}{" "}
+              <h1>{character.name}</h1>
+              <p>{character.species}</p>
+            </Link>
+          </li>
+        );
       });
   };
   return <>{renderCharacters()}</>;

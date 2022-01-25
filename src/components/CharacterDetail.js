@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/hp-logo.png";
+import "../styles/CharacterDetail.scss";
 
 function CharacterDetail(props) {
   let img;
@@ -30,25 +31,35 @@ function CharacterDetail(props) {
   };
 
   return (
-    <div>
-      <Link to="/">Volver</Link>
-      {img ? (
+    <div className="characterbody">
+      <Link to="/" className="link">
+        <i className="fas fa-arrow-left"></i> Volver al listado
+      </Link>
+
+      <section className={`sectiondetail ${props.characterHouse}background`}>
         <img
-          src={props.character.img}
-          alt={`Foto de ${props.character.name}`}
+          src={img ? `${props.character.img}` : `${logo}`}
+          alt={
+            img
+              ? `Foto de ${props.character.name}`
+              : `Foto del personaje no disponible`
+          }
+          className="characterimg"
         />
-      ) : (
-        <img src={logo} alt={`Foto del personaje no disponible`} />
-      )}
-      <h1>{props.character.name}</h1>
-      <p>Estatus: {getStatus()}</p>
-      <p>Especie: {getSpecies()}</p>
-      <p>Género: {getGender()}</p>
-      <p>
-        Casa:{" "}
-        {props.characterHouse.charAt(0).toUpperCase() +
-          props.characterHouse.slice(1)}
-      </p>
+        <section className={`charactercontent ${props.characterHouse}color`}>
+          <h1>{props.character.name}</h1>
+          <article className="details">
+            <p>Estatus: {getStatus()}</p>
+            <p>Especie: {getSpecies()}</p>
+            <p>Género: {getGender()}</p>
+            <p>
+              Casa:{" "}
+              {props.characterHouse.charAt(0).toUpperCase() +
+                props.characterHouse.slice(1)}
+            </p>
+          </article>
+        </section>
+      </section>
     </div>
   );
 }

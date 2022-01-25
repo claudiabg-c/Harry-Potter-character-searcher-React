@@ -23,7 +23,7 @@ function Filters(props) {
       </label>
       <label>
         Buscar casa:
-        <select defaultValue="gryffindor" onChange={handleSelect}>
+        <select defaultValue={props.selectValue} onChange={handleSelect}>
           <option value="gryffindor">Gryffindor</option>
           <option value="hufflepuff">Hufflepuff</option>
           <option value="ravenclaw">Ravenclaw</option>

@@ -3,9 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import callToApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
+import CharacterDetail from "./CharacterDetail";
 import logo from "../images/Harry-Potter-Logo.png";
 import "../styles/App.scss";
-import CharacterDetail from "./CharacterDetail";
+import "../styles/Reset.scss";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -51,7 +52,7 @@ const App = () => {
   return (
     <div>
       <header className="header">
-        <img className="title" alt="Logo Harry Potter" src={logo}></img>
+        <img className="title" alt="Logo Harry Potter" src={logo} />
       </header>
       <main>
         <Switch>
@@ -60,6 +61,7 @@ const App = () => {
               handleFilter={handleFilter}
               searchHouse={searchHouse}
               inputValue={`${searchName}`}
+              selectValue={`${searchHouse}`}
             />
             <CharacterList
               characters={characters}

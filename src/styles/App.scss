@@ -6,3 +6,15 @@
 .title {
   width: 50vw;
 }
+
+@media (min-width: 768px) {
+  .title {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    width: 30vw;
+  }
+}

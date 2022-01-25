@@ -11,6 +11,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [searchHouse, setSearchHouse] = useState("gryffindor");
+  const [existingCharacter, setExistingCharacter] = useState(true);
 
   useEffect(() => {
     callToApi(searchHouse).then((result) => {
@@ -20,6 +21,15 @@ const App = () => {
 
   const handleFilter = (data) => {
     if (data.key === "name") {
+      const itsACharacter = characters.find((character) =>
+        character.name.toLowerCase().includes(data.value.toLowerCase())
+      );
+      if (data.code === 8) {
+        setExistingCharacter(true);
+      }
+      if (itsACharacter === undefined) {
+        setExistingCharacter(false);
+      }
       setSearchName(data.value);
     } else if (data.key === "house") {
       setSearchHouse(data.value);
@@ -46,8 +56,16 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} searchHouse={searchHouse} />
-            <CharacterList characters={characters} searchName={searchName} />
+            <Filters
+              handleFilter={handleFilter}
+              searchHouse={searchHouse}
+              inputValue={`${searchName}`}
+            />
+            <CharacterList
+              characters={characters}
+              searchName={searchName}
+              existingCharacter={existingCharacter}
+            />
           </Route>
           <Route path="/character/:characterName" render={renderUserDetail} />
         </Switch>

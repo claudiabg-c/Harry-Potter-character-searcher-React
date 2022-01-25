@@ -1,6 +1,10 @@
 function Filters(props) {
   const handleInput = (ev) => {
-    props.handleFilter({ key: "name", value: ev.target.value });
+    props.handleFilter({
+      key: "name",
+      value: ev.target.value,
+      code: ev.keyCode,
+    });
   };
 
   const handleSelect = (ev) => {
@@ -11,7 +15,11 @@ function Filters(props) {
     <form onSubmit={(ev) => ev.preventDefault()}>
       <label>
         Buscar personaje:
-        <input type="text" onChange={handleInput} />
+        <input
+          type="text"
+          onKeyUp={handleInput}
+          defaultValue={props.inputValue}
+        />
       </label>
       <label>
         Buscar casa:

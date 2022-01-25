@@ -3,6 +3,10 @@ function Filters(props) {
     props.handleFilter({ key: "name", value: ev.target.value });
   };
 
+  const handleSelect = (ev) => {
+    props.handleFilter({ key: "house", value: ev.target.value });
+  };
+
   return (
     <form>
       <label>
@@ -11,7 +15,7 @@ function Filters(props) {
       </label>
       <label>
         Buscar casa:
-        <select defaultValue="gryffindor">
+        <select defaultValue="gryffindor" onChange={handleSelect}>
           <option value="gryffindor">Gryffindor</option>
           <option value="hufflepuff">Hufflepuff</option>
           <option value="ravenclaw">Ravenclaw</option>

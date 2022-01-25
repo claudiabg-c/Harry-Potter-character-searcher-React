@@ -8,6 +8,14 @@ function CharacterCard(props) {
           .toLowerCase()
           .includes(`${props.searchName}`.toLowerCase());
       })
+      .filter((character) => {
+        //return filterGender === '' ? true : user.gender === filterGender;
+        if (props.searchHouse === "gryffindor") {
+          return true;
+        } else {
+          return character.house === props.searchHouse;
+        }
+      })
       .map((character, index) => {
         if (character.img !== "") {
           return (

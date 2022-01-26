@@ -4,12 +4,13 @@ import callToApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
+import ls from "../services/localStorage";
 import logo from "../images/Harry-Potter-Logo.png";
 import "../styles/App.scss";
 import "../styles/Reset.scss";
 
 const App = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(ls.get("characters", []));
   const [searchName, setSearchName] = useState("");
   const [searchHouse, setSearchHouse] = useState("gryffindor");
   const [existingCharacter, setExistingCharacter] = useState(true);
@@ -19,6 +20,10 @@ const App = () => {
       setCharacters(result);
     });
   }, [searchHouse]);
+
+  useEffect(() => {
+    ls.set("characters", characters);
+  }, [characters]);
 
   const handleFilter = (data) => {
     if (data.key === "name") {

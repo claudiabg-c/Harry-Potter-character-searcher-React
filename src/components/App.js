@@ -14,6 +14,14 @@ const App = () => {
   const [searchName, setSearchName] = useState("");
   const [searchHouse, setSearchHouse] = useState("gryffindor");
   const [existingCharacter, setExistingCharacter] = useState(true);
+  const [sortedCharacters, setSortedCharacters] = useState([]);
+
+  useEffect(() => {
+    const sortedList = [...characters].sort((a, b) =>
+      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+    );
+    setSortedCharacters(sortedList);
+  }, [characters]);
 
   useEffect(() => {
     callToApi(searchHouse).then((result) => {
@@ -22,12 +30,12 @@ const App = () => {
   }, [searchHouse]);
 
   useEffect(() => {
-    ls.set("characters", characters);
-  }, [characters]);
+    ls.set("characters", sortedCharacters);
+  }, [sortedCharacters]);
 
   const handleFilter = (data) => {
     if (data.key === "name") {
-      const itsACharacter = characters.find((character) =>
+      const itsACharacter = sortedCharacters.find((character) =>
         character.name.toLowerCase().includes(data.value.toLowerCase())
       );
       if (data.code === 8) {
@@ -71,7 +79,7 @@ const App = () => {
               selectValue={`${searchHouse}`}
             />
             <CharacterList
-              characters={characters}
+              characters={sortedCharacters}
               searchName={searchName}
               existingCharacter={existingCharacter}
             />

@@ -13,6 +13,10 @@ function Filters(props) {
     props.handleFilter({ key: "house", value: ev.target.value });
   };
 
+  const handleSelectSex = (ev) => {
+    props.handleFilter({ key: "sex", value: ev.target.value });
+  };
+
   return (
     <form onSubmit={(ev) => ev.preventDefault()} className="form">
       <label htmlFor="searchname" className="label name">
@@ -26,7 +30,6 @@ function Filters(props) {
         defaultValue={props.inputValue}
         className="search input"
       />
-
       <label htmlFor="searchhouse" className="label house">
         Buscar casa:
       </label>
@@ -40,6 +43,19 @@ function Filters(props) {
         <option value="hufflepuff">Hufflepuff</option>
         <option value="ravenclaw">Ravenclaw</option>
         <option value="slytherin">Slytherin</option>
+      </select>
+      <label htmlFor="searchhouse" className="label house">
+        Filtrar por género:
+      </label>
+      <select
+        id="searchhouse"
+        defaultValue={props.selectSexValue}
+        onChange={handleSelectSex}
+        className="search select"
+      >
+        <option value="todos">Todos</option>
+        <option value="female">Mujer</option>
+        <option value="male">Hombre</option>
       </select>
     </form>
   );

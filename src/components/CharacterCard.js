@@ -17,6 +17,13 @@ function CharacterCard(props) {
           return character.house === props.searchHouse;
         }
       })
+      .filter((character) => {
+        if (props.sex === "todos") {
+          return true;
+        } else {
+          return character.gender === props.sex;
+        }
+      })
       .map((character, index) => {
         let img;
         if (character.img === "") {

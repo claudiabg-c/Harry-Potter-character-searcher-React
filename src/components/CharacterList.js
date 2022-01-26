@@ -8,7 +8,7 @@ function CharacterList(props) {
 
   return (
     <section className="check">
-      <div>
+      <div className="checkbox">
         <input
           type="checkbox"
           id="checkbox"
@@ -22,7 +22,9 @@ function CharacterList(props) {
           <CharacterCard
             characters={props.sort ? props.sortedCharacters : props.characters}
             searchName={props.searchName}
+            filterByGender={props.filterByGender}
             existingCharacter={props.existingCharacter}
+            sex={props.sex}
           />
         </ul>
       ) : (

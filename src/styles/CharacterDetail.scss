@@ -7,14 +7,30 @@
 .link {
   margin-top: 20px;
   width: 100%;
+
+  &.gryffindor {
+    color: #d3a625;
+  }
+
+  &.hufflepuff {
+    color: #f0c75e;
+  }
+
+  &.ravenclaw {
+    color: #946b2d;
+  }
+
+  &.slytherin {
+    color: #aaaaaa;
+  }
 }
 
 .fas {
-  padding-right: 15px;
+  padding: 0 15px;
 }
 
 .sectiondetail {
-  width: 100%;
+  width: 85%;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -22,20 +38,20 @@
   background-position: center;
   border-radius: 5px;
   font-size: 14px;
-  padding: 10px 10px 10px 0;
-  margin-top: 5px;
+  padding: 10px 30px 10px 0;
+  margin: 10px;
 
   &.gryffindorbackground {
-    background-image: url(../images/Gryffindor.jpg);
+    background-image: url(../images/gryffindor.jpg);
   }
   &.slytherinbackground {
-    background-image: url(../images/Slytherin.png);
+    background-image: url(../images/slytherin.jpg);
   }
   &.ravenclawbackground {
-    background-image: url(../images/Ravenclaw.jpg);
+    background-image: url(../images/ravenclaw.jpg);
   }
   &.hufflepuffbackground {
-    background-image: url(../images/Hufflepuff.png);
+    background-image: url(../images/hufflepuff.jpg);
   }
 }
 
@@ -44,7 +60,24 @@
   width: 120px;
   object-fit: cover;
   object-position: top;
-  padding: 30px;
+  margin: 30px;
+  border-radius: 5px;
+
+  &.gryffindor {
+    border: solid 5px #d3a625;
+  }
+
+  &.hufflepuff {
+    border: solid 5px #f0c75e;
+  }
+
+  &.ravenclaw {
+    border: solid 5px #946b2d;
+  }
+
+  &.slytherin {
+    border: solid 5px #aaaaaa;
+  }
 }
 
 .charactercontent {
@@ -56,24 +89,20 @@
   padding: 0 10px;
 
   &.gryffindorcolor {
-    background-color: rgba(126, 8, 41, 0.5);
-    color: white;
-    text-shadow: -1px 0 #891537, 0 1px #891537, 1px 0 #891537, 0 -1px #891537;
+    background-color: rgba(162, 117, 22, 0.8);
+    color: #380001;
   }
   &.slytherincolor {
-    background-color: rgba(99, 159, 142, 0.5);
-    color: white;
-    text-shadow: -1px 0 #689b8a, 0 1px #689b8a, 1px 0 #689b8a, 0 -1px #689b8a;
+    background-color: rgba(12, 65, 11, 0.8);
+    color: #aaaaaa;
   }
   &.ravenclawcolor {
-    background-color: rgba(59, 82, 120, 0.5);
-    color: white;
-    text-shadow: -1px 0 #374f71, 0 1px #374f71, 1px 0 #374f71, 0 -1px #374f71;
+    background-color: rgba(164, 120, 17, 0.8);
+    color: #080725;
   }
   &.hufflepuffcolor {
-    background-color: rgba(218, 165, 32, 0.5);
-    color: #605942;
-    text-shadow: -1px 0 #d7a738, 0 1px #d7a738, 1px 0 #d7a738, 0 -1px #d7a738;
+    background-color: rgba(169, 128, 40, 0.8);
+    color: #372e29;
   }
 }
 

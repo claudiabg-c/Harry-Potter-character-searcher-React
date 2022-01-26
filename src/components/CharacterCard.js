@@ -46,20 +46,19 @@ function CharacterCard(props) {
 
         return (
           <li key={index} className="list">
-            <Link to={`/character/${character.name}`}>
-              {img ? (
-                <img
-                  src={character.img}
-                  alt={`Foto de ${character.name}`}
-                  className="imglist"
-                />
-              ) : (
-                <img
-                  src={logo}
-                  alt={`Foto del personaje no disponible`}
-                  className="imglist"
-                />
-              )}{" "}
+            <Link
+              to={`/character/${character.name}`}
+              className={character.houseOf}
+            >
+              <img
+                src={img ? `${character.img}` : `${logo}`}
+                alt={
+                  img
+                    ? `Foto de ${character.name}`
+                    : `Foto del personaje no disponible`
+                }
+                className={`imglist ${character.houseOf}`}
+              />
               <h1 className="charactername">{character.name}</h1>
               <p className="characterspecies">{renderSpecies()}</p>
             </Link>

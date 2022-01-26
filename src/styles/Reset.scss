@@ -1,15 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 
+#root {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "MedievalSharp", cursive;
   font-weight: bold;
   font-size: 16px;
-  background-color: goldenrod;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
 }
 
 li {

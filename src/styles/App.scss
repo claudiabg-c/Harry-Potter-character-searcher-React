@@ -1,15 +1,44 @@
+.home {
+  min-height: 100vh;
+  &.gryffindor {
+    color: #d3a625;
+    background-color: #7f0909;
+  }
+
+  &.hufflepuff {
+    color: #f0c75e;
+    background-color: #372e29;
+  }
+
+  &.ravenclaw {
+    background-color: #0e1a40;
+    color: #946b2d;
+  }
+
+  &.slytherin {
+    background-color: #1a472a;
+    color: #aaaaaa;
+  }
+}
+
 .header {
   display: flex;
   justify-content: center;
 }
 
 .title {
-  width: 50vw;
+  width: 80vw;
+  margin: 30px;
 }
 
 .notfound {
   width: 100%;
   text-align: center;
+}
+
+.copy {
+  font-weight: lighter;
+  margin: 5px;
 }
 
 @media (min-width: 768px) {

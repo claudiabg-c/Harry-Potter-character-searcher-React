@@ -28,7 +28,7 @@ function Filters(props) {
         placeholder={`Ej.: Remus Lupin`}
         onKeyUp={handleInput}
         defaultValue={props.inputValue}
-        className="search input"
+        className={`search input ${props.selectValue}`}
       />
       <label htmlFor="searchhouse" className="label house">
         Buscar casa:
@@ -37,7 +37,7 @@ function Filters(props) {
         id="searchhouse"
         defaultValue={props.selectValue}
         onChange={handleSelect}
-        className="search select"
+        className={`search select ${props.selectValue}`}
       >
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>
@@ -51,13 +51,17 @@ function Filters(props) {
         id="searchhouse"
         defaultValue={props.selectGenderValue}
         onChange={handleSelectGender}
-        className="search select"
+        className={`search select ${props.selectValue}`}
       >
         <option value="all">Todos</option>
         <option value="female">Mujer</option>
         <option value="male">Hombre</option>
       </select>
-      <button type="reset" onClick={props.handleReset} className='reset'>
+      <button
+        type="reset"
+        onClick={props.handleReset}
+        className={`reset ${props.selectValue}`}
+      >
         <i className="fas fa-trash-alt"></i>Eliminar búsqueda
       </button>
     </form>

@@ -44,7 +44,7 @@ function CharacterDetail(props) {
 
   return (
     <div className="characterbody">
-      <Link to="/" className="link">
+      <Link to="/" className={`link ${props.characterHouse}`}>
         <i className="fas fa-arrow-left"></i> Volver al listado
       </Link>
 
@@ -56,7 +56,7 @@ function CharacterDetail(props) {
               ? `Foto de ${props.character.name}`
               : `Foto del personaje no disponible`
           }
-          className="characterimg"
+          className={`characterimg ${props.characterHouse}`}
         />
         <section className={`charactercontent ${props.characterHouse}color`}>
           <h1>{props.character.name}</h1>

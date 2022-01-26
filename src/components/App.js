@@ -5,7 +5,7 @@ import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import ls from "../services/localStorage";
-import logo from "../images/Harry-Potter-Logo.png";
+import logo from "../images/harry-potter-logo(1).png";
 import "../styles/App.scss";
 import "../styles/Reset.scss";
 
@@ -79,7 +79,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={`home ${searchHouse}`}>
       <header className="header">
         <Link to="/">
           <img className="title" alt="Logo Harry Potter" src={logo} />
@@ -121,7 +121,6 @@ const App = () => {
           </Route>
         </Switch>
       </main>
-      <footer></footer>
     </div>
   );
 };

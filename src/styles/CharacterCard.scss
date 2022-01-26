@@ -2,11 +2,43 @@
   justify-self: center;
 }
 
+.Gryffindor {
+  color: #d3a625;
+}
+
+.Hufflepuff {
+  color: #f0c75e;
+}
+
+.Ravenclaw {
+  color: #946b2d;
+}
+
+.Slytherin {
+  color: #aaaaaa;
+}
+
 .imglist {
   height: 150px;
   width: 120px;
   object-fit: cover;
   object-position: top;
+  border-radius: 5px;
+  &.Gryffindor {
+    border: solid 5px #d3a625;
+  }
+
+  &.Hufflepuff {
+    border: solid 5px #f0c75e;
+  }
+
+  &.Ravenclaw {
+    border: solid 5px #946b2d;
+  }
+
+  &.Slytherin {
+    border: solid 5px #aaaaaa;
+  }
 }
 
 .charactername {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/hp-logo.png";
+import "../styles/CharacterCard.scss";
 
 function CharacterCard(props) {
   const renderCharacters = () => {
@@ -37,15 +38,23 @@ function CharacterCard(props) {
         };
 
         return (
-          <li key={index}>
+          <li key={index} className="list">
             <Link to={`/character/${character.name}`}>
               {img ? (
-                <img src={character.img} alt={`Foto de ${character.name}`} />
+                <img
+                  src={character.img}
+                  alt={`Foto de ${character.name}`}
+                  className="imglist"
+                />
               ) : (
-                <img src={logo} alt={`Foto del personaje no disponible`} />
+                <img
+                  src={logo}
+                  alt={`Foto del personaje no disponible`}
+                  className="imglist"
+                />
               )}{" "}
-              <h1>{character.name}</h1>
-              <p>{renderSpecies()}</p>
+              <h1 className="charactername">{character.name}</h1>
+              <p className="characterspecies">{renderSpecies()}</p>
             </Link>
           </li>
         );

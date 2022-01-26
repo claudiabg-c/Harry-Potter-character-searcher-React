@@ -1,0 +1,56 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+}
+
+.label {
+  grid-column: 1/2;
+  align-self: center;
+  justify-self: right;
+  padding-right: 10px;
+}
+
+.search {
+  grid-column: 2/3;
+  padding: 4px 5px 4px;
+  font-family: "MedievalSharp", cursive;
+  border-radius: 5px;
+  border: 0;
+
+  &.input {
+    width: 140px;
+  }
+
+  &.select {
+    width: 154px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-size: 20px;
+  }
+
+  .name {
+    grid-column: 2/3;
+  }
+
+  .house {
+    grid-column: 4/5;
+  }
+
+  .search {
+    font-size: 18px;
+    &.input {
+      grid-column: 3/4;
+      width: 240px;
+    }
+
+    &.select {
+      grid-column: 5/6;
+      width: 254px;
+    }
+  }
+}

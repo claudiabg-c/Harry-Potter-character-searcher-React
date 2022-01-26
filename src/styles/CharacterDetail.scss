@@ -40,6 +40,9 @@
 
 .characterimg {
   height: 150px;
+  width: 120px;
+  object-fit: cover;
+  object-position: top;
   padding: 30px;
 }
 
@@ -58,6 +61,8 @@
   }
   &.slytherincolor {
     background-color: rgba(99, 159, 142, 0.5);
+    color: white;
+    text-shadow: -1px 0 #689b8a, 0 1px #689b8a, 1px 0 #689b8a, 0 -1px #689b8a;
   }
   &.ravenclawcolor {
     background-color: rgba(59, 82, 120, 0.5);
@@ -85,6 +90,7 @@
 
   .characterimg {
     height: 250px;
+    width: 220px;
     margin-right: 30px;
   }
 }
@@ -97,5 +103,7 @@
 
   .characterimg {
     height: 300px;
+    width: 280px;
+    margin-right: 50px;
   }
 }

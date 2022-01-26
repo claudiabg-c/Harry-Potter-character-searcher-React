@@ -1,10 +1,11 @@
 import CharacterCard from "./CharacterCard";
+import "../styles/CharacterList.scss";
 
 function CharacterList(props) {
   return (
-    <>
+    <section>
       {props.existingCharacter ? (
-        <ul>
+        <ul className="listtable">
           <CharacterCard
             characters={props.characters}
             searchName={props.searchName}
@@ -16,7 +17,7 @@ function CharacterList(props) {
           No hay ningún personaje que coincida con la palabra {props.searchName}
         </p>
       )}
-    </>
+    </section>
   );
 }
 

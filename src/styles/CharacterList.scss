@@ -1,0 +1,19 @@
+.listtable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  padding-inline-start: unset;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .listtable {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listtable {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

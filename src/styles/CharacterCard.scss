@@ -1,0 +1,56 @@
+.list {
+  justify-self: center;
+}
+
+.imglist {
+  height: 150px;
+  width: 120px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.charactername {
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.characterspecies {
+  width: 120px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .imglist {
+    height: 250px;
+    width: 220px;
+  }
+
+  .charactername {
+    width: 220px;
+    font-size: 20px;
+  }
+
+  .characterspecies {
+    width: 220px;
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imglist {
+    height: 280px;
+  }
+
+  .charactername {
+    font-size: 22px;
+  }
+
+  .characterspecies {
+    font-size: 18px;
+  }
+}

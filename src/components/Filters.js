@@ -1,3 +1,5 @@
+import "../styles/Filters.scss";
+
 function Filters(props) {
   const handleInput = (ev) => {
     props.handleFilter({
@@ -12,24 +14,33 @@ function Filters(props) {
   };
 
   return (
-    <form onSubmit={(ev) => ev.preventDefault()}>
-      <label>
+    <form onSubmit={(ev) => ev.preventDefault()} className="form">
+      <label htmlFor="searchname" className="label name">
         Buscar personaje:
-        <input
-          type="text"
-          onKeyUp={handleInput}
-          defaultValue={props.inputValue}
-        />
       </label>
-      <label>
+      <input
+        type="text"
+        id="searchname"
+        placeholder={`Ej.: Remus Lupin`}
+        onKeyUp={handleInput}
+        defaultValue={props.inputValue}
+        className="search input"
+      />
+
+      <label htmlFor="searchhouse" className="label house">
         Buscar casa:
-        <select defaultValue={props.selectValue} onChange={handleSelect}>
-          <option value="gryffindor">Gryffindor</option>
-          <option value="hufflepuff">Hufflepuff</option>
-          <option value="ravenclaw">Ravenclaw</option>
-          <option value="slytherin">Slytherin</option>
-        </select>
       </label>
+      <select
+        id="searchhouse"
+        defaultValue={props.selectValue}
+        onChange={handleSelect}
+        className="search select"
+      >
+        <option value="gryffindor">Gryffindor</option>
+        <option value="hufflepuff">Hufflepuff</option>
+        <option value="ravenclaw">Ravenclaw</option>
+        <option value="slytherin">Slytherin</option>
+      </select>
     </form>
   );
 }

@@ -11,7 +11,15 @@ function CharacterDetail(props) {
   }
 
   const getStatus = () => {
-    return props.character.status === true ? "Vivo" : "Muerto";
+    return props.character.status === true ? (
+      <span>
+        Vivo <i className="fas fa-heart"></i>
+      </span>
+    ) : (
+      <span>
+        Muerto <i className="fas fa-heart-broken"></i>
+      </span>
+    );
   };
 
   const getGender = () => {
@@ -29,6 +37,10 @@ function CharacterDetail(props) {
       return "Fantasma";
     }
   };
+
+  const getNickNames = props.character.nickName.map((eachNickName) => {
+    return " " + eachNickName;
+  });
 
   return (
     <div className="characterbody">
@@ -56,6 +68,11 @@ function CharacterDetail(props) {
               Casa:{" "}
               {props.characterHouse.charAt(0).toUpperCase() +
                 props.characterHouse.slice(1)}
+            </p>
+            <p>
+              {props.character.nickName.length === 0
+                ? null
+                : `Otros nombres: ${getNickNames}`}
             </p>
           </article>
         </section>

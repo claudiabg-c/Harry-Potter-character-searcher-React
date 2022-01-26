@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import callToApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
@@ -52,7 +52,9 @@ const App = () => {
   return (
     <div>
       <header className="header">
-        <img className="title" alt="Logo Harry Potter" src={logo} />
+        <Link to="/">
+          <img className="title" alt="Logo Harry Potter" src={logo} />
+        </Link>
       </header>
       <main>
         <Switch>

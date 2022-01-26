@@ -22,17 +22,17 @@ const App = () => {
   };
 
   useEffect(() => {
+    callToApi(searchHouse).then((result) => {
+      setCharacters(result);
+    });
+  }, [searchHouse]);
+
+  useEffect(() => {
     const sortedList = [...characters].sort((a, b) =>
       a.name > b.name ? 1 : a.name < b.name ? -1 : 0
     );
     setSortedCharacters(sortedList);
   }, [characters]);
-
-  useEffect(() => {
-    callToApi(searchHouse).then((result) => {
-      setCharacters(result);
-    });
-  }, [searchHouse]);
 
   useEffect(() => {
     ls.set("characters", characters);
@@ -92,7 +92,19 @@ const App = () => {
               existingCharacter={existingCharacter}
             />
           </Route>
-          <Route path="/character/:characterName" render={renderUserDetail} />
+          <Route
+            exact
+            path="/character/:characterName"
+            render={renderUserDetail}
+          />
+          <Route>
+            <section className="notfound">
+              <h1>404 - Página no encontrada</h1>
+              <Link to="/">
+                <i className="fas fa-arrow-left"></i> Volver al inicio
+              </Link>
+            </section>
+          </Route>
         </Switch>
       </main>
       <footer></footer>

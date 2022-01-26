@@ -13,8 +13,8 @@ function Filters(props) {
     props.handleFilter({ key: "house", value: ev.target.value });
   };
 
-  const handleSelectSex = (ev) => {
-    props.handleFilter({ key: "sex", value: ev.target.value });
+  const handleSelectGender = (ev) => {
+    props.handleFilter({ key: "gender", value: ev.target.value });
   };
 
   return (
@@ -49,14 +49,17 @@ function Filters(props) {
       </label>
       <select
         id="searchhouse"
-        defaultValue={props.selectSexValue}
-        onChange={handleSelectSex}
+        defaultValue={props.selectGenderValue}
+        onChange={handleSelectGender}
         className="search select"
       >
-        <option value="todos">Todos</option>
+        <option value="all">Todos</option>
         <option value="female">Mujer</option>
         <option value="male">Hombre</option>
       </select>
+      <button type="reset" onClick={props.handleReset} className='reset'>
+        <i className="fas fa-trash-alt"></i>Eliminar búsqueda
+      </button>
     </form>
   );
 }

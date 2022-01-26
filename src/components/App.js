@@ -13,7 +13,7 @@ const App = () => {
   const [characters, setCharacters] = useState(ls.get("characters", []));
   const [searchName, setSearchName] = useState("");
   const [searchHouse, setSearchHouse] = useState("gryffindor");
-  const [sex, setSex] = useState("todos");
+  const [gender, setGender] = useState("all");
   const [existingCharacter, setExistingCharacter] = useState(true);
   const [sortedCharacters, setSortedCharacters] = useState([]);
   const [sort, setSort] = useState(false);
@@ -53,9 +53,17 @@ const App = () => {
       setSearchName(data.value);
     } else if (data.key === "house") {
       setSearchHouse(data.value);
-    } else if (data.key === "sex") {
-      setSex(data.value);
+    } else if (data.key === "gender") {
+      setGender(data.value);
     }
+  };
+
+  const handleReset = () => {
+    setExistingCharacter(true);
+    setSearchName("");
+    setSearchHouse("gryffindor");
+    setGender("all");
+    setSort(false);
   };
 
   const renderUserDetail = (props) => {
@@ -82,10 +90,11 @@ const App = () => {
           <Route path="/" exact>
             <Filters
               handleFilter={handleFilter}
+              handleReset={handleReset}
               searchHouse={searchHouse}
               inputValue={`${searchName}`}
               selectValue={`${searchHouse}`}
-              selectSexValue={`${sex}`}
+              selectGenderValue={`${gender}`}
             />
             <CharacterList
               characters={characters}
@@ -94,7 +103,7 @@ const App = () => {
               sort={sort}
               searchName={searchName}
               existingCharacter={existingCharacter}
-              sex={sex}
+              gender={gender}
             />
           </Route>
           <Route

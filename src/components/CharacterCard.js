@@ -18,10 +18,10 @@ function CharacterCard(props) {
         }
       })
       .filter((character) => {
-        if (props.sex === "todos") {
+        if (props.gender === "all") {
           return true;
         } else {
-          return character.gender === props.sex;
+          return character.gender === props.gender;
         }
       })
       .map((character, index) => {

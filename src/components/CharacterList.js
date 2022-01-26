@@ -24,7 +24,7 @@ function CharacterList(props) {
             searchName={props.searchName}
             filterByGender={props.filterByGender}
             existingCharacter={props.existingCharacter}
-            sex={props.sex}
+            gender={props.gender}
           />
         </ul>
       ) : (

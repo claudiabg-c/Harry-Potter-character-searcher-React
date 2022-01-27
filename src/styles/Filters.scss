@@ -22,18 +22,22 @@
     width: 144px;
     &.gryffindor {
       background-color: #efba30;
+      color: #ae0001;
     }
 
     &.hufflepuff {
       background-color: #ecb939;
+      color: #6a5b50;
     }
 
     &.ravenclaw {
       background-color: #946b2d;
+      color: #26335c;
     }
 
     &.slytherin {
       background-color: #5d5d5d;
+      color: #aaaaaa;
     }
   }
 
@@ -63,7 +67,6 @@
   &.input::placeholder {
     color: black;
   }
-
 }
 
 .reset {

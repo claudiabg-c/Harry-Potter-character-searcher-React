@@ -31,7 +31,7 @@ function Filters(props) {
         className={`search input ${props.selectValue}`}
       />
       <label htmlFor="searchhouse" className="label house">
-        Buscar casa:
+        Filtrar por casa:
       </label>
       <select
         id="searchhouse"

@@ -114,7 +114,7 @@ const App = () => {
           <Route>
             <section className="notfound">
               <h1>404 - Página no encontrada</h1>
-              <Link to="/">
+              <Link to="/" className="link">
                 <i className="fas fa-arrow-left"></i> Volver al inicio
               </Link>
             </section>

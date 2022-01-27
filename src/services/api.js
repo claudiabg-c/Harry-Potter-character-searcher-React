@@ -12,7 +12,7 @@ const callToApi = (searchHouse) => {
           status: character.alive,
           gender: character.gender,
           nickName: character.alternate_names,
-          houseOf: character.house,
+          houseOf: character.house.toLowerCase(),
         };
       });
       return result;

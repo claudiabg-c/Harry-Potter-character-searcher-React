@@ -47,7 +47,7 @@ function CharacterCard(props) {
         return (
           <li key={index} className="list">
             <Link
-              to={`/character/${character.name}`}
+              to={`/character/${character.name}/${character.houseOf}`}
               className={character.houseOf}
             >
               <img

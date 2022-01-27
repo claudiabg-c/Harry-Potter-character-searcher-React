@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 import callToApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
@@ -15,7 +15,7 @@ const App = () => {
   const [searchHouse, setSearchHouse] = useState("gryffindor");
   const [gender, setGender] = useState("all");
   const [existingCharacter, setExistingCharacter] = useState(true);
-  const [sortedCharacters, setSortedCharacters] = useState([]);
+  // const [sortedCharacters, setSortedCharacters] = useState([]);
   const [sort, setSort] = useState(false);
 
   const handleCheck = (value) => {
@@ -28,16 +28,16 @@ const App = () => {
     });
   }, [searchHouse]);
 
-  useEffect(() => {
-    const sortedList = [...characters].sort((a, b) =>
-      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
-    );
-    setSortedCharacters(sortedList);
-  }, [characters]);
+  // useEffect(() => {
+  //   const sortedList = [...characters].sort((a, b) =>
+  //     a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+  //   );
+  //   setSortedCharacters(sortedList);
+  // }, [characters]);
 
-  useEffect(() => {
-    ls.set("characters", characters);
-  }, [characters]);
+  // useEffect(() => {
+  //   ls.set("characters", characters);
+  // }, [characters]);
 
   const handleFilter = (data) => {
     if (data.key === "name") {
@@ -66,16 +66,37 @@ const App = () => {
     setSort(false);
   };
 
-  const renderUserDetail = (props) => {
-    const routeName = props.match.params.characterName;
-    const decodeName = decodeURI(routeName);
-    const foundUser = characters.find(
-      (character) => character.name === decodeName
-    );
+  // const renderUserDetail = (props) => {
+  //   const routeName = props.match.params.characterName;
+  //   const decodeName = decodeURI(routeName);
+  //   const foundUser = characters.find(
+  //     (character) => character.name === decodeName
+  //   );
 
-    return (
-      <CharacterDetail character={foundUser} characterHouse={searchHouse} />
-    );
+  //   return (
+  //     <CharacterDetail character={foundUser} characterHouse={searchHouse} />
+  //   );
+  // };
+
+  const routeInfo = useRouteMatch("/character/:characterName/:house");
+
+  const foundUser = () => {
+    if (routeInfo) {
+      const routeName = routeInfo.params.characterName;
+      const decodeName = decodeURI(routeName);
+      const house = routeInfo.params.house;
+      console.log(house, searchHouse);
+      if (house !== searchHouse) {
+        console.log("hola");
+        setSearchHouse(house);
+      } else {
+        const foundUser = characters.find(
+          (character) => character.name === decodeName
+        );
+        return foundUser;
+      }
+      console.log(house);
+    }
   };
 
   return (
@@ -98,7 +119,7 @@ const App = () => {
             />
             <CharacterList
               characters={characters}
-              sortedCharacters={sortedCharacters}
+              // sortedCharacters={sortedCharacters}
               handleCheck={handleCheck}
               sort={sort}
               searchName={searchName}
@@ -107,10 +128,15 @@ const App = () => {
             />
           </Route>
           <Route
-            exact
-            path="/character/:characterName"
-            render={renderUserDetail}
-          />
+            path="/character/:characterName/:house"
+
+            // render={renderUserDetail}
+          >
+            <CharacterDetail
+              character={foundUser()}
+              characterHouse={searchHouse}
+            />
+          </Route>
           <Route>
             <section className="notfound">
               <h1>404 - Página no encontrada</h1>

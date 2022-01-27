@@ -3,13 +3,6 @@ import logo from "../images/hp-logo.png";
 import "../styles/CharacterDetail.scss";
 
 function CharacterDetail(props) {
-  // let img;
-  // if (props.character.img === "") {
-  //   img = false;
-  // } else {
-  //   img = true;
-  // }
-
   const getStatus = () => {
     return props.character.status === true ? (
       <span>

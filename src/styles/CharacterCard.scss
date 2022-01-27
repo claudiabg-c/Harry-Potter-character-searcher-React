@@ -2,19 +2,19 @@
   justify-self: center;
 }
 
-.Gryffindor {
+.gryffindor {
   color: #d3a625;
 }
 
-.Hufflepuff {
+.hufflepuff {
   color: #f0c75e;
 }
 
-.Ravenclaw {
+.ravenclaw {
   color: #946b2d;
 }
 
-.Slytherin {
+.slytherin {
   color: #aaaaaa;
 }
 
@@ -24,19 +24,19 @@
   object-fit: cover;
   object-position: top;
   border-radius: 5px;
-  &.Gryffindor {
+  &.gryffindor {
     border: solid 5px #d3a625;
   }
 
-  &.Hufflepuff {
+  &.hufflepuff {
     border: solid 5px #f0c75e;
   }
 
-  &.Ravenclaw {
+  &.ravenclaw {
     border: solid 5px #946b2d;
   }
 
-  &.Slytherin {
+  &.slytherin {
     border: solid 5px #aaaaaa;
   }
 }

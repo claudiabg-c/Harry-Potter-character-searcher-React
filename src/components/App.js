@@ -15,7 +15,7 @@ const App = () => {
   const [searchHouse, setSearchHouse] = useState("gryffindor");
   const [gender, setGender] = useState("all");
   const [existingCharacter, setExistingCharacter] = useState(true);
-  // const [sortedCharacters, setSortedCharacters] = useState([]);
+  const [sortedCharacters, setSortedCharacters] = useState([]);
   const [sort, setSort] = useState(false);
 
   const handleCheck = (value) => {
@@ -28,16 +28,16 @@ const App = () => {
     });
   }, [searchHouse]);
 
-  // useEffect(() => {
-  //   const sortedList = [...characters].sort((a, b) =>
-  //     a.name > b.name ? 1 : a.name < b.name ? -1 : 0
-  //   );
-  //   setSortedCharacters(sortedList);
-  // }, [characters]);
+  useEffect(() => {
+    const sortedList = [...characters].sort((a, b) =>
+      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+    );
+    setSortedCharacters(sortedList);
+  }, [characters]);
 
-  // useEffect(() => {
-  //   ls.set("characters", characters);
-  // }, [characters]);
+  useEffect(() => {
+    ls.set("characters", characters);
+  }, [characters]);
 
   const handleFilter = (data) => {
     if (data.key === "name") {
@@ -66,36 +66,20 @@ const App = () => {
     setSort(false);
   };
 
-  // const renderUserDetail = (props) => {
-  //   const routeName = props.match.params.characterName;
-  //   const decodeName = decodeURI(routeName);
-  //   const foundUser = characters.find(
-  //     (character) => character.name === decodeName
-  //   );
-
-  //   return (
-  //     <CharacterDetail character={foundUser} characterHouse={searchHouse} />
-  //   );
-  // };
-
   const routeInfo = useRouteMatch("/character/:characterName/:house");
 
-  const foundUser = () => {
+  const reRenderCharacterList = () => {
     if (routeInfo) {
       const routeName = routeInfo.params.characterName;
       const decodeName = decodeURI(routeName);
       const house = routeInfo.params.house;
-      console.log(house, searchHouse);
       if (house !== searchHouse) {
-        console.log("hola");
-        setSearchHouse(house);
       } else {
         const foundUser = characters.find(
           (character) => character.name === decodeName
         );
         return foundUser;
       }
-      console.log(house);
     }
   };
 
@@ -119,7 +103,7 @@ const App = () => {
             />
             <CharacterList
               characters={characters}
-              // sortedCharacters={sortedCharacters}
+              sortedCharacters={sortedCharacters}
               handleCheck={handleCheck}
               sort={sort}
               searchName={searchName}
@@ -127,13 +111,9 @@ const App = () => {
               gender={gender}
             />
           </Route>
-          <Route
-            path="/character/:characterName/:house"
-
-            // render={renderUserDetail}
-          >
+          <Route path="/character/:characterName/:house">
             <CharacterDetail
-              character={foundUser()}
+              character={reRenderCharacterList()}
               characterHouse={searchHouse}
             />
           </Route>

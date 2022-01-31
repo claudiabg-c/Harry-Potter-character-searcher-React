@@ -25,6 +25,7 @@ function CharacterList(props) {
             filterByGender={props.filterByGender}
             existingCharacter={props.existingCharacter}
             gender={props.gender}
+            status={props.status}
           />
         </ul>
       ) : (

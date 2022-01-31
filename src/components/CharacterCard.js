@@ -24,6 +24,15 @@ function CharacterCard(props) {
           return character.gender === props.gender;
         }
       })
+      .filter((character) => {
+        if (props.status === "alive") {
+          return character.status === true;
+        } else if (props.status === "dead") {
+          return character.status === false;
+        } else {
+          return true;
+        }
+      })
       .map((character, index) => {
         let img;
         if (character.img === "") {

@@ -17,6 +17,7 @@ const App = () => {
   const [existingCharacter, setExistingCharacter] = useState(true);
   const [sortedCharacters, setSortedCharacters] = useState([]);
   const [sort, setSort] = useState(false);
+  const [status, setStatus] = useState("all");
 
   const handleCheck = (value) => {
     setSort(value);
@@ -55,6 +56,8 @@ const App = () => {
       setSearchHouse(data.value);
     } else if (data.key === "gender") {
       setGender(data.value);
+    } else if (data.key === "status") {
+      setStatus(data.value);
     }
   };
 
@@ -100,6 +103,7 @@ const App = () => {
               inputValue={`${searchName}`}
               selectValue={`${searchHouse}`}
               selectGenderValue={`${gender}`}
+              status={status}
             />
             <CharacterList
               characters={characters}
@@ -109,6 +113,7 @@ const App = () => {
               searchName={searchName}
               existingCharacter={existingCharacter}
               gender={gender}
+              status={status}
             />
           </Route>
           <Route path="/character/:characterName/:house">

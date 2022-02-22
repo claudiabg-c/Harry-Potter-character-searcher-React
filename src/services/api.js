@@ -1,7 +1,5 @@
 const callToApi = (searchHouse) => {
-  return fetch(
-    `https://hp-api.herokuapp.com/api/characters/house/${searchHouse}`
-  )
+  return fetch(`//hp-api.herokuapp.com/api/characters/house/${searchHouse}`)
     .then((response) => response.json())
     .then((data) => {
       const result = data.map((character) => {

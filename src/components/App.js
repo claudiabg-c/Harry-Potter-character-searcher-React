@@ -100,6 +100,7 @@ const App = () => {
               inputValue={`${searchName}`}
               selectValue={`${searchHouse}`}
               selectGenderValue={`${gender}`}
+              characters={characters}
             />
             <CharacterList
               characters={characters}

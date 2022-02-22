@@ -70,9 +70,7 @@ function CharacterDetail(props) {
               <p>Especie: {getSpecies()}</p>
               <p>Género: {getGender()}</p>
               <p>
-                Casa:{" "}
-                {props.characterHouse.charAt(0).toUpperCase() +
-                  props.characterHouse.slice(1)}
+                Casa: <span className="cap">{props.characterHouse}</span>
               </p>
               <p>
                 {props.character.nickName.length === 0

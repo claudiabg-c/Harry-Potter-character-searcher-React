@@ -25,7 +25,7 @@ function Filters(props) {
       <input
         type="text"
         id="searchname"
-        placeholder={`Ej.: Remus Lupin`}
+        placeholder={`Ej.: ${props.characters[8].name}`}
         onKeyUp={handleInput}
         defaultValue={props.inputValue}
         className={`search input ${props.selectValue}`}

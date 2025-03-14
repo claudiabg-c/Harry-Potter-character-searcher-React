@@ -1,5 +1,7 @@
 const callToApi = (searchHouse) => {
-  return fetch(`//hp-api.herokuapp.com/api/characters/house/${searchHouse}`)
+  return fetch(`/api/characters/house/${searchHouse}`, {
+    mode: 'no-cors'
+  })
     .then((response) => response.json())
     .then((data) => {
       const result = data.map((character) => {

@@ -22,6 +22,7 @@
     "eject": "react-scripts eject",
     "githubpages": "rm -rf build && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \"Publish in GitHub Pages\" && git push"
   },
+  "proxy": "https://hp-api.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",

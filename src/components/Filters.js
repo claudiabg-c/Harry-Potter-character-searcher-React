@@ -15,7 +15,7 @@ function Filters(props) {
 
   const handleSelectGender = (ev) => {
     props.handleFilter({ key: "gender", value: ev.target.value });
-  };
+  };  
 
   return (
     <form onSubmit={(ev) => ev.preventDefault()} className="form">

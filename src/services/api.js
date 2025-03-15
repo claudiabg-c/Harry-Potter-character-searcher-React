@@ -1,22 +1,21 @@
+import characters from './characters.json';
+
 const callToApi = (searchHouse) => {
-  return fetch(`/api/characters/house/${searchHouse}`, {
-    mode: 'no-cors'
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const result = data.map((character) => {
-        return {
-          img: character.image,
-          name: character.name,
-          species: character.species,
-          status: character.alive,
-          gender: character.gender,
-          nickName: character.alternate_names,
-          houseOf: character.house.toLowerCase(),
-        };
-      });
-      return result;
-    });
+  return new Promise((resolve) => {
+    const result = characters
+      .filter((character) => character.house.toLowerCase() === searchHouse.toLowerCase())
+      .map((character) => ({
+        img: character.image,
+        name: character.name,
+        species: character.species,
+        status: character.alive,
+        gender: character.gender,
+        nickName: character.alternate_names,
+        houseOf: character.house.toLowerCase(),
+      }));
+
+    resolve(result);
+  });
 };
 
 export default callToApi;

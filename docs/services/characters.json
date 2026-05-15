@@ -28,7 +28,7 @@
         "actor": "Daniel Radcliffe",
         "alternate_actors": [],
         "alive": true,
-        "image": "https://ik.imagekit.io/hpapi/harry.jpg"
+        "image": "https://cdn.shopify.com/s/files/1/1943/7257/files/Harry-Potter_large_0dad831f-4b4a-4db5-b0eb-f96e70436102_large.jpg?v=1514443105"
     },
     {
         "id": "4c7e6819-a91a-45b2-a454-f931e4a7cce3",
@@ -59,7 +59,7 @@
         "actor": "Emma Watson",
         "alternate_actors": [],
         "alive": true,
-        "image": "https://ik.imagekit.io/hpapi/hermione.jpeg"
+        "image": "https://static.wikia.nocookie.net/warnerbros/images/3/3e/Hermione.jpg/revision/latest/scale-to-width-down/1200?cb=20120729103114&path-prefix=es"
     },
     {
         "id": "c3b1f9a5-b87b-48bf-b00d-95b093ea6390",
@@ -93,7 +93,7 @@
         "actor": "Rupert Grint",
         "alternate_actors": [],
         "alive": true,
-        "image": "https://ik.imagekit.io/hpapi/ron.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/5e/Ron_Weasley_poster.jpg"
     },
     {
         "id": "efa802c8-ae18-4ae1-a524-49df21d05939",
@@ -156,7 +156,7 @@
             "Michael Gambon"
         ],
         "alive": false,
-        "image": "https://i.pinimg.com/736x/a4/40/ce/a440ce9708a7bfa4242f45894bfe65ec.jpg"
+        "image": "https://static.wikia.nocookie.net/esharrypotter/images/c/ce/Albus_Dumbledore.PNG/revision/latest/scale-to-width-down/1200?cb=20120409223718"
     },
     {
         "id": "3569d265-bd27-44d8-88e8-82fb0a848374",
@@ -1221,7 +1221,7 @@
         "actor": "Terence Bayler",
         "alternate_actors": [],
         "alive": false,
-        "image": "https://pm1.aminoapps.com/7216/0f9a06d9feee5a2e95c63144fb25db61f546bd40r1-360-355v2_00.jpg"
+        "image": "https://static.wikia.nocookie.net/esharrypotter/images/8/82/BaronHP.jpg/revision/latest/thumbnail/width/360/height/360?cb=20150525203728"
     },
     {
         "id": "6c4350a9-2356-4bba-96bd-0458c12d99b5",
@@ -1528,7 +1528,7 @@
         "actor": "Scot Fearn",
         "alternate_actors": [],
         "alive": true,
-        "image": ""
+        "image": "https://static.wikia.nocookie.net/esharrypotter/images/9/95/P2_Adrian.jpg/revision/latest/thumbnail/width/360/height/360?cb=20101203143820"
     },
     {
         "id": "b1d8360e-333f-43e8-a0bb-b26217a0d91c",
@@ -1819,7 +1819,7 @@
             "Rochelle Douglas"
         ],
         "alive": true,
-        "image": ""
+        "image": "https://static.wikia.nocookie.net/esharrypotter/images/5/5b/P1_Alicia_Spinnet.PNG/revision/latest?cb=20111007175448"
     },
     {
         "id": "a64df82a-1131-46cb-ae94-659dadec66e5",
@@ -2081,7 +2081,7 @@
         "actor": "",
         "alternate_actors": [],
         "alive": true,
-        "image": ""
+        "image": "https://static.wikia.nocookie.net/harrypotter/images/d/d3/Antoodleflxkc4e_xrhjrjmaetinamaschineglianni9000iesrxm9imh2f5u942.jpg/revision/latest?cb=20200804180544&path-prefix=it"
     },
     {
         "id": "14505ff9-e2d8-4a27-bc85-c8d8dfb2ca33",
@@ -4831,9 +4831,9 @@
     },
     {
         "id": "0c80d701-fa23-4126-9711-efe5f3c4789a",
-        "name": "Ernie Macmillan",
+        "name": "Ernest Macmillan",
         "alternate_names": [
-            "Ernest Macmillan"
+            "Ernie Macmillan"
         ],
         "species": "human",
         "gender": "male",
@@ -4855,7 +4855,7 @@
         "actor": "Louis Doyle",
         "alternate_actors": [],
         "alive": true,
-        "image": ""
+        "image": "https://static.wikia.nocookie.net/harrypotter/images/d/de/Ernie_GOF.jpg/revision/latest?cb=20160720043852"
     },
     {
         "id": "59ffaed8-446f-46b6-bcdc-2ffbf59b11ac",

@@ -51,7 +51,11 @@ function CharacterCard(props) {
               className={character.houseOf}
             >
               <img
-                src={img ? `${character.img}` : `${logo}`}
+                src={img ? character.img : logo}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = logo;
+                }}
                 alt={
                   img
                     ? `Foto de ${character.name}`

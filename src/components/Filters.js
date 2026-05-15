@@ -1,6 +1,11 @@
 import "../styles/Filters.scss";
 
 function Filters(props) {
+  const placeholderText =
+    props.characters && props.characters[8] && props.characters[8].name
+      ? `Ej.: ${props.characters[8].name}`
+      : "Ej.: Harry Potter";
+
   const handleInput = (ev) => {
     props.handleFilter({
       key: "name",
@@ -25,7 +30,7 @@ function Filters(props) {
       <input
         type="text"
         id="searchname"
-        placeholder={`Ej.: ${props.characters[8].name}`}
+        placeholder={placeholderText}
         onKeyUp={handleInput}
         defaultValue={props.inputValue}
         className={`search input ${props.selectValue}`}
@@ -44,11 +49,11 @@ function Filters(props) {
         <option value="ravenclaw">Ravenclaw</option>
         <option value="slytherin">Slytherin</option>
       </select>
-      <label htmlFor="searchhouse" className="label house">
+      <label htmlFor="searchgender" className="label house">
         Filtrar por género:
       </label>
       <select
-        id="searchhouse"
+        id="searchgender"
         defaultValue={props.selectGenderValue}
         onChange={handleSelectGender}
         className={`search select ${props.selectValue}`}

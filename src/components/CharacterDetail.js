@@ -56,6 +56,10 @@ function CharacterDetail(props) {
         <section className={`sectiondetail ${props.characterHouse}background`}>
           <img
             src={render() ? `${props.character.img}` : `${logo}`}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = logo;
+            }}
             alt={
               render()
                 ? `Foto de ${props.character.name}`
